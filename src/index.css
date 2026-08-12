@@ -1,155 +1,598 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 
-/* Search Bar */
-.searchBar{
-  display: flex;
-  justify-content: center;
-  gap: 7px;
-  margin-top: 22px;
-  flex-wrap: wrap;
-}
-.searchBar input{
-  width: 400px;
-  max-width: 90%;
-  padding: 9px;
-  font-size: 22px;
-  border: none;
-  background-color: #e7e7e7;
-  border-radius: 6px;
-}
-.searchBar button{
-  width: 90px;
-  max-width: 40%;
-  background-color: orange;
-  color: white;
-  border: none;
-  font-size: 20px;
-  border-radius: 6px;
-  cursor: pointer;
+
+/* =========================
+   Search Bar
+========================= */
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 22px;
+    flex-wrap: wrap;
 }
 
-/* Meal Cards */
-.meals{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 21px;
-  justify-content: center;
-  width: 90%;
-  margin: auto;
-  margin-top: 44px;
-}
-.meals img{
-  width: 100%;
-  height: 270px;
-  border-top-left-radius: 11px;
-  border-top-right-radius: 11px;
-}
-.mealImg{
-  width: 280px;
-  max-width: 90%;
-  height: 380px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
-  border-radius: 11px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.mealImg p{
-  font-weight: 600;
-  margin: 10px 0;
-}
-.mealImg button{
-  width: 120px;
-  background-color: orange;
-  color: white;
-  font-size: 17px;
-  border: none;
-  border-radius: 21px;
-  padding: 7px;
-  cursor: pointer;
-  margin-bottom: 10px;
+.searchBar input {
+    width: 400px;
+    max-width: 90%;
+    padding: 9px;
+    font-size: 22px;
+    border: none;
+    background-color: #e7e7e7;
+    border-radius: 6px;
 }
 
-/* Meal Info Full Screen */
-.mealInfo{
-  width: 100%;
-  min-height: 100vh; /* Full screen height */
-  background-color: rgb(255, 181, 42);
-  display: flex;
-  flex-direction: column; /* default stack on mobile */
-  justify-content: center;
-  align-items: center;
-  padding: 32px;
-  box-sizing: border-box;
-  overflow-y: auto; /* scroll if instructions long */
+.searchBar button {
+    width: 90px;
+    max-width: 40%;
+    background-color: orange;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.mealInfo img{
-  width: 400px;
-  max-width: 90%;
-  height: auto;
-  border-radius: 11px;
+
+/* =========================
+   Meal Cards
+========================= */
+
+.meals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 44px;
 }
 
-.mealInfo .info{
-  margin-top: 20px;
-  text-align: center;
+.meals img {
+    width: 100%;
+    height: 270px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
 }
 
-.mealInfo button{
-  border: none;
-  padding: 9px;
-  border-radius: 6px;
-  font-size: 19px;
-  background-color: orangered;
-  color: #fff;
-  margin-top: 15px;
-}
-
-.msg{
-  text-align: center;
-}
-.head{
-  text-align: center;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-  .mealInfo{
+.mealImg {
+    width: 280px;
+    max-width: 90%;
+    height: 380px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 11px;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+.mealImg p {
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.mealImg button {
+    width: 120px;
+    background-color: orange;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 21px;
+    padding: 7px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   Original Heading
+========================= */
+
+.msg {
+    text-align: center;
+}
+
+.head {
+    text-align: center;
+}
+
+
+/* =====================================================
+   MEAL INFO PAGE
+===================================================== */
+
+.mealInfoPage {
+    min-height: 100vh;
+    background: #fff8ed;
+    padding: 30px 6% 60px;
+}
+
+
+/* =========================
+   Back Button
+========================= */
+
+.backButton {
+    border: none;
+    background: white;
+    color: #f57c00;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.backButton:hover {
+    background: #f57c00;
+    color: white;
+    transform: translateX(-4px);
+}
+
+
+/* =========================
+   Main Recipe Card
+========================= */
+
+.mealInfoPage .mealInfo {
+    max-width: 1100px;
+    min-height: auto;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+
+    padding: 0;
+}
+
+
+/* =========================
+   Recipe Image
+========================= */
+
+.mealInfoImage {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+}
+
+.mealInfoImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+}
+
+
+/* =========================
+   Recipe Information
+========================= */
+
+.mealInfoPage .info {
+    margin: 0;
+    padding: 55px 45px;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/* Category */
+
+.category {
+    background: #fff0d9;
+    color: #e66f00;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+
+/* Recipe Name */
+
+.mealInfoPage .info h1 {
+    font-size: 42px;
+    line-height: 1.15;
+
+    color: #222;
+
+    margin: 0 0 12px;
+}
+
+
+/* Cuisine */
+
+.cuisine {
+    color: #777;
+    font-size: 17px;
+    margin: 0 0 15px;
+}
+
+
+/* Short Description */
+
+.shortText {
+    color: #666;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    max-width: 450px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   YouTube Button
+========================= */
+
+.videoButton {
+    display: inline-block;
+
+    background: #ff4b2b;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.videoButton:hover {
+    background: #e63e20;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   Recipe Sections
+========================= */
+
+.recipeSection {
+    max-width: 1100px;
+
+    margin: 35px auto 0;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+}
+
+.recipeSection h2 {
+    margin: 0 0 25px;
+
+    color: #222;
+
+    font-size: 27px;
+}
+
+
+/* =========================
+   Ingredients
+========================= */
+
+.ingredients {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.ingredientItem {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: #fffaf3;
+
+    border: 1px solid #f3e3cf;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.ingredientItem:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Ingredient Number */
+
+.ingredientNumber {
+    min-width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: orange;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* Ingredient Name */
+
+.ingredientItem strong {
+    color: #333;
+
+    font-size: 15px;
+}
+
+
+/* Measurement */
+
+.ingredientItem p {
+    margin: 4px 0 0;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   Cooking Instructions
+========================= */
+
+.instructions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.instruction {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
     padding: 16px;
-  }
+
+    background: #fffaf3;
+
+    border-radius: 10px;
+
+    border-left: 4px solid orange;
 }
 
-@media (max-width: 480px){
-  .searchBar input{
-    font-size: 18px;
-    padding: 14px;
-  }
-  .searchBar button{
-    font-size: 18px;
-    width: 120px;     
-    padding: 10px 0; 
-  }
-  .mealImg{
-    height: auto;
-  }
-  .mealImg img{
-    height: 200px;
-  }
+
+/* Step Number */
+
+.stepNumber {
+    min-width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: orange;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
 }
 
+
+/* Instruction Text */
+
+.instruction p {
+    margin: 2px 0 0;
+
+    color: #555;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   Loading
+========================= */
+
+.mealLoading {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #777;
+}
+
+.loadingCircle {
+    width: 40px;
+
+    height: 40px;
+
+    border: 4px solid #eee;
+
+    border-top: 4px solid orange;
+
+    border-radius: 50%;
+
+    animation: loading 0.8s linear infinite;
+
+    margin-bottom: 12px;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 768px) {
+
+    .mealInfoPage {
+        padding: 20px 15px 40px;
+    }
+
+    .mealInfoPage .mealInfo {
+        grid-template-columns: 1fr;
+    }
+
+    .mealInfoImage {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .mealInfoPage .info {
+        padding: 30px 25px;
+    }
+
+    .mealInfoPage .info h1 {
+        font-size: 32px;
+    }
+
+    .ingredients {
+        grid-template-columns: 1fr;
+    }
+
+    .recipeSection {
+        padding: 25px 20px;
+    }
+
+    .recipeSection h2 {
+        font-size: 23px;
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 480px) {
+
+    .searchBar input {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    .searchBar button {
+        font-size: 18px;
+        width: 120px;
+        padding: 10px 0;
+    }
+
+    .mealImg {
+        height: auto;
+    }
+
+    .mealImg img {
+        height: 200px;
+    }
+
+
+    /* Meal Info */
+
+    .mealInfoImage {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .mealInfoPage .info {
+        padding: 25px 20px;
+    }
+
+    .mealInfoPage .info h1 {
+        font-size: 28px;
+    }
+
+    .recipeSection {
+        padding: 22px 15px;
+    }
+
+    .instruction {
+        gap: 10px;
+    }
+
+    .instruction p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
