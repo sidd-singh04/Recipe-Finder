@@ -4,12 +4,6 @@
 
 Recipe Finder is a responsive web application that allows users to search for recipes using **TheMealDB API**. Users can explore dishes, search by name or category, and view detailed recipe information with ingredients and cooking instructions.
 
-## 🌐 Live Demo
-
-**[Explore Recipe Finder](https://recipe-finder-six-psi.vercel.app/)**
-
----
-
 ## ✨ Features
 
 ### 🏠 Recipe Discovery & Search
